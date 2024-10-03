@@ -1,0 +1,44 @@
+nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+nav ul::after{
+    content:"";
+    display: table;
+    clear: both;
+}
+
+nav li{
+    list-style-type: none;
+    float: left;
+    width: 10rem;
+    text-align: center;
+}
+
+nav a{
+    display: block;
+    text-decoration: none;
+    color:black;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0px;
+}
+nav a:hover{
+    color:violet;
+    border-bottom: 2px solid gold;
+}
+
+nav{
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    position: sticky;
+    top: 0px;
+}
+
+a{
+    justify-content: center;
+    text-decoration: none;
+
+}
