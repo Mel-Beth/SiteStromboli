@@ -1,0 +1,13 @@
+section{
+    display: block;
+}
+
+/* règles pour le main container qui englobe les trois productCards */
+.productFirstContainer {
+    display: flex;
+    padding:0 2.3125rem ;
+  
+
+
+
+}
