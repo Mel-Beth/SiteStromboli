@@ -11,7 +11,8 @@ nav ul::after{
 }
 
 nav li{
-    list-style-type: none;
+    list-style-type: none
+    ;
     float: left;
     width: 10rem;
     text-align: center;
@@ -42,3 +43,4 @@ a{
     text-decoration: none;
 
 }
+
