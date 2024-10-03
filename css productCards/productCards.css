@@ -1,13 +1,9 @@
-section{
-    display: block;
+main{
+    background-color: gold;
 }
 
-/* règles pour le main container qui englobe les trois productCards */
-.productFirstContainer {
-    display: flex;
-    padding:0 2.3125rem ;
-  
 
-
-
+img{
+    width: 100px;
+    height: auto;
 }
