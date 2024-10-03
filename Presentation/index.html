@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="productCards.css">
+    <link rel="stylesheet" href="/css productCards/style.css">
+    <link rel="stylesheet" href="/css productCards/productCards.css">
     <title>Accueil</title>
 </head>
+
 <body>
     <header>
         <!-- BARRE DE MENU AVEC LES ONGLETS -->
@@ -19,13 +21,34 @@
             <li><a href="livredor">Livre d'or</a></li>
         </nav>
     </header>
-    
+
     <main>
-        <!-- CREATION EMPLACEMENT CONTAINER AVEC TROIS CARTES "PIZZA" "Boisson" "DESSERT" -->
-        <section class="productCards" data-type="productCards">
-            <div class="productCardsMain" data-type="containerMainForProductCard">
-                <div class="productFirstContainer" data-type="product"></div>
+        
+        <!-- CONTAINER AVEC LES TROIS IMG QUI MENENT VERS LA PAGE MENU ET LE PARAGRAPHE CORRESPONDANT -->
+        <section class="imgMenu">
+            <div id="pizza">
+                <!-- Photo image pizza pour menu-->
+                <a href="page2Menu.html#paragraphePizza">
+                    <img  src="/image/pizza.jpg"  class="imgCardPizza" alt="imagePizzaversMenuPizza" width="100px">
+                    </a>
             </div>
+
+           
+            <div id="boisson">
+                <!-- PHOTO BOISSON POUR IMAGE DU MILIEU VERS PAGE MENU -->
+                 <a href="page2Menu.html#paragrapheBoisson" width="100 px">
+                    <img src="/image/boisson.jpg" alt="imgBoissonVersMenuDessert" class="imgCardBoisson">
+                 </a>
+            </div>
+
+           
+            <div id="dessert">
+                <!-- PHOTO DESSERT POUR IMAGE DE DROITE VERS LA PAGE MENU QUAND ON CLIQUE DESSUS -->
+                 <a href="page2Menu.html#paragrapheDessert">
+                 <img src="" alt="imageDessertVersMenuDessert" class="imgCardDessert">
+                 </a>
+            </div>
+                  
 
         </section>
 
@@ -34,6 +57,8 @@
     <footer>
 
     </footer>
-    
+
 </body>
+
 </html>
+
