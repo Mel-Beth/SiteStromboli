@@ -10,12 +10,27 @@
     <link rel="stylesheet" href="/footerCss/footerStyle.css">
    <script src="https://kit.fontawesome.com/677558f9a4.js" crossorigin="anonymous"></script>
     <title>Accueil</title>
+    <!-- font google pour titre h1 stromboli -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <!-- google font pour paragraphe dans encadré jaune -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap" rel="stylesheet">
+
+
+
+
+
+
 </head>
+
 
 <body>
     <header>
         <!-- BARRE DE MENU AVEC LES ONGLETS -->
-        <nav>
+        <nav class="barreNav">
             <li><a href="id=accueil">Accueil</a></li>
             <li><a href="id=menu">Menu</a></li>
             <li><a href="suggestionChef">Suggestion du Chef</a></li>
@@ -27,28 +42,21 @@
 
     <main>
             <!-- DOIT ETRE TOUT A GAUCHE DU MAIN   -->
-        <section class="cadrePresentation">
-
-            <div class="textPresentation">
+        <section class="cadrePresentationSection">
+            <div class="margeCadrePresentation">
+                <div class="cadrePresentation">
           
-                <h1>Stromboni, une affaire familiale</h1>
-            
-                    <p>Pizzaiolo depuis 8 générations, blablablablablablablablablabla
-                    blablablablablablablablablablablablablablablablablablablablabla
-                    </p>
+                        <h1 style="text-align: center;" id="titrePresentation">Stromboli,<br> une affaire familiale</h1>
+                            <p id="paraStromboli"> Bienvenue chez Stromboli! Découvrez nos délicieuses pizzas, préparées avec amour et des ingrédients frais. Venez les déguster dans une atmosphère chaleureuse et conviviale et partager un bon moment avec vos proches.
+                            </p>
 
-            </div>
-
-            <div>
-                <button id="btnHoraires">Horaires</button>
-            </div>
                 
-                
-
-
-
-
-        </section>
+                    <div id="btn">
+                        <a href="page4Horaires.html"><button id="btnHoraires">Horaires</button></a>
+                    </div>
+                </div>
+            </div>
+         </section>
         
         
         
@@ -66,7 +74,7 @@
             <div id="boisson">
                 <!-- PHOTO BOISSON POUR IMAGE DU MILIEU VERS PAGE MENU -->
                  <a href="page2Menu.html#paragrapheBoisson" >
-                    <img src="/image/boisson.jpg" alt="imgBoissonVersMenuDessert" class="imgCardBoisson">
+                    <img src="/image/boisson.jpg" alt="imgBoissonVersMenuDessert" id="imgCardBoisson">
                  </a>
             </div>
 
@@ -74,7 +82,7 @@
             <div id="dessert">
                 <!-- PHOTO DESSERT POUR IMAGE DE DROITE VERS LA PAGE MENU QUAND ON CLIQUE DESSUS -->
                  <a href="page2Menu.html#paragrapheDessert">
-                 <img src="" alt="imageDessertVersMenuDessert" class="imgCardDessert">
+                 <img src="/image/dessert.jpg" alt="imageDessertVersMenuDessert" class="imgCardDessert">
                  </a>
             </div>
                   
@@ -85,10 +93,10 @@
 
    
         <footer>
-            <div class="imgAdresse">
+            <div class="containerAdresse">
                 <i class="fa-solid fa-location-dot"></i>
-                <h1 id="adresseLocation" style="font-size: 20px;">Location</h1>
-                <p id="adressePAragraphe">Restaurant Stromboli <br>
+                <h1 id="nomLocation">Location</h1>
+                <p id="adresseParagraphe">Restaurant Stromboli <br>
                     34 Av Charles Boutet <br>
                     Charleville-Mézières</p>
             </div>
@@ -101,7 +109,9 @@
                 <i class="fa-brands fa-instagram"></i>
             </div>
 
+            <div>
             <p id="copyright">Copyright 2024</p>
+            </div>
         </footer>
 
    
