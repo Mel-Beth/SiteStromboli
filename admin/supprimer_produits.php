@@ -12,6 +12,10 @@
 
     <input type="submit" value="Supprimer" class="submit" />
 
-
-
 </form>
+
+<?php 
+
+$sqlQuery = 'DELETE FROM produits WHERE *';
+
+?>
