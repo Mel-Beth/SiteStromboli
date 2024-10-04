@@ -37,9 +37,10 @@
      $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8"; // DSN
      $pdo = new PDO($dsn, $username, $password);
 
-     
+     $sqlQuery = 'INSERT INTO produits(nom, description, prix, id) VALUES (:nom, :description, :prix, :id)';
+
 
      // Exécution de la requête avec la méthode query
-     $stmt = $pdo->query($sql_plat);
+     $stmt = $pdo->query($sql_Query);
 
 ?>
