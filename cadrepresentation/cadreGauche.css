@@ -10,4 +10,11 @@
     border-radius: 1rem;
     box-shadow: 0 0 10px rgb(112, 102, 44);
     justify-content: center;
+    
+}
+
+h1 p{
+    justify-items: center;
+    align-content: stretch;
+    
 }
