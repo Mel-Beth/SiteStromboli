@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Connexion au back-end</title>
+	<link rel="stylesheet" href="connexion_admin.css">
+	<link rel="stylesheet" href="config.php">
+	<link rel="stylesheet" href="login.php">
+</head>
+<body>
+
+	<h1>Connexion administrateur</h1>
+
+	<div class="img">
+		<img src="img/logo.png" alt="Logo">
+		<!-- Formulaire de connexion -->
+	</div>
+
+  <form action="login.php" method="post">
+	<label for="username">Nom d'utilisateur :</label>
+	<input type="text" id="username" name="username"><br><br>
+	<label for="password">Mot de passe :</label>
+	<input type="password" id="password" name="password"><br><br>
+	
+	<div class="btn">
+	<input type="submit" value="Se connecter">
+    </div>
+
+  </form>
+</body>
+</html>
