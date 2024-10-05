@@ -1,8 +1,23 @@
-body {
+html, body {
+    height: 100vh;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+  }
+
+body{
     background-color: #f7971e;
-    color: white;
+    margin: 0;
+    max-width: 100%;
+    height: auto;
+    /*overflow -> empecher le scroll */
+    overflow: auto;
+   
 }
 
+/* sert à bloquer le scroll, une seule page
+ body{overflow: hidden;
+} */
 nav ul{
     display: flex;
     flex-direction: row;
@@ -31,8 +46,12 @@ nav a{
     padding: 10px 0px;
 }
 nav a:hover{
-    color:violet;
+    color:rgb(27, 43, 107);
     border-bottom: 2px solid gold;
+}
+
+.barreNav{
+    margin: 10px;
 }
 
 header{
@@ -41,13 +60,126 @@ header{
     width: 100%;
     height: auto;
     margin: 0 auto;
+    padding-left: 0;
     background-color: white;
     position: sticky;
     top: 0px;
+    justify-content: space-around;
+    border-top: #f7971e 10px solid;
 }
 
 a{
     justify-content: center;
     text-decoration: none;
 
+}
+
+h2 {
+    font-size: 20px; /* Taille de la police */
+    font-weight: bold; /* Poids de la police */
+    color: #f7971e; /* Couleur du texte */
+    text-align: center; /* Alignement du texte */
+    margin-bottom: 10px; /* Espacement en bas */
+    padding: 10px; /* Espacement intérieur */
+    background-color: white; /* Couleur de fond */
+    border-bottom: 1px solid #ccc; /* Bordure en bas */
+}
+
+.product-list {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.product-card {
+    text-align: center;
+    
+    margin-bottom: 20px; /* ajuster la valeur pour obtenir l'espace souhaité */
+}
+  
+.product-card h2 {
+    text-align: center;
+}
+  
+.product-card p {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+footer{
+    background-color: rgb(31, 31, 38);
+    width: 100%;
+    height: auto;
+    margin-top:50px;
+    padding: 0;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    
+}
+
+
+/* TOUTE LA DIV ICON/LOCATION/ADRESSE */
+.containerAdresse{
+    display: flex;
+    flex-direction: row;
+   
+}
+
+/* icone de location */
+.fa-location-dot{
+    padding:8px;
+    color:#F7971E ;
+   
+}
+
+
+#nomLocation{
+    color: aliceblue;
+    font-size: 11px;
+    margin: 5px;
+    padding-top: 2px;
+
+}
+
+#adresseParagraphe{
+
+    display: flex;
+    width: 15rem;
+    height: 5rem;
+    padding-left:10px;
+    color: aliceblue;
+    padding-top: 2.5px;
+    margin: 5px;
+    font-size: 10px;
+
+   
+}
+
+.iconContainer{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 200px;
+    height: 50px;
+    /* margin right pour centrer mon container au milieu */
+    margin-right: 9rem;
+    /* margin top pour decoller le container  en haut de la div parent */
+    margin-top: 0.5rem;
+    color: #f7971e;
+    font-size: 35px;
+}
+
+#copyright{
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    /* margin top abaisse mon container  en bas */
+    margin-top: 35px;
+    /* padding right décole mon copyright de la bordure droite */
+    padding-right: 15px;
+    width: 200px;
+    height: 30px;
+    font-size: 10px;
 }

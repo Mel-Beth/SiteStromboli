@@ -24,6 +24,8 @@
 <body>
     <header>
         <!-- BARRE DE MENU AVEC LES ONGLETS -->
+
+        <img src="connexion/img/logo.png" alt="logoStromboli" id="logoStromboli" width=100px>
         <nav class="barreNav">
             <li><a href="/Presentation/index.html#ancreAccueil">Accueil</a></li>
             <li><a href="/">Menu</a></li>
@@ -36,8 +38,11 @@
 
 
     <!-- Votre contenu HTML -->
-    <?php
-        include 'db.php'; // assume this file has your database connection details
+<?php
+$db_host = 'localhost';
+$db_username = 'root';
+$db_password = '';
+$db_name = 'stromboli'; 
 
 // Créer une connexion
 $conn = new mysqli($db_host, $db_username, $db_password, $db_name);
@@ -47,16 +52,32 @@ if ($conn->connect_error) {
     die("Erreur de connexion : " . $conn->connect_error);
 }
 
-$result = $conn->query("SELECT * FROM produits");
+$result = $conn->query("SELECT p.id, p.nom AS produit_nom, c.nom AS categorie_nom, p.description, p.prix
+                         FROM produits p
+                         JOIN catg_produits c ON p.id_catg = c.id_catg
+                         ORDER BY c.id_catg");
 
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        echo $row["nom"]." - Description : ".$row["description"]." - Prix : ".$row["prix"]."<br>";
-    }
+if (!$result) {
+    echo "Erreur : " . $conn->error;
 } else {
-    echo "Aucun résultat";
-} 
+    $categorieActuelle = "";
 
+    echo '<div class="product-list">';
+    while($row = $result->fetch_assoc()) {
+        if ($row["categorie_nom"] != $categorieActuelle) {
+            $categorieActuelle = $row["categorie_nom"];
+            echo '</div><h2>' . $row["categorie_nom"] . '</h2><div class="product-list">';
+        }
+
+        echo '<div class="product-card" style="display: inline-block; margin: 10px;">';
+        echo '<img src="images/' . $row["photo"] . '" alt="' . $row["produit_nom"] . '">'; // Afficher l'image        
+        echo '<p>' . $row["produit_nom"] . '</p>';
+        echo '<p>' . $row["description"] . '</p>';
+        echo '<p>Prix : ' . $row["prix"] . '</p>';
+        echo '</div>';
+    }
+    echo '</div>';
+}
 // close the connection
 mysqli_close($conn);
 ?>
