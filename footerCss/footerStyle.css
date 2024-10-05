@@ -2,8 +2,8 @@ footer{
     background-color: rgb(31, 31, 38);
     width: 100%;
     height: auto;
-    margin: 0;
-    padding-top: 0;
+    margin-top:50px;
+    padding: 0;
     display:flex;
     justify-content: space-between;
     flex-direction: row;
@@ -20,7 +20,7 @@ footer{
 
 /* icone de location */
 .fa-location-dot{
-    padding: 1rem;
+    padding:8px;
     color:#F7971E ;
    
 }
@@ -28,21 +28,23 @@ footer{
 
 #nomLocation{
     color: aliceblue;
-    font-size: 16px;
-    margin: 1rem;
-    padding-right: 10px;
+    font-size: 11px;
+    margin: 5px;
+    padding-top: 2px;
 
 }
 
 #adresseParagraphe{
 
     display: flex;
-    width: 12rem;
+    width: 15rem;
     height: 5rem;
-    margin-right: 0px;
+    padding-left:10px;
     color: aliceblue;
-    margin-left:1px;
-    padding: 0px;
+    padding-top: 2.5px;
+    margin: 5px;
+    font-size: 10px;
+
    
 }
 
@@ -52,20 +54,26 @@ footer{
     flex-direction: row;
     justify-content: space-around;
     width: 200px;
-    height: 35px;
+    height: 50px;
     /* margin right pour centrer mon container au milieu */
-    margin-right: 10rem;
-    color: gold;
-    padding:25px;
-    font-size: 45px;
-    border: 2px solid gold;
-   
+    margin-right: 9rem;
+    /* margin top pour decoller le container  en haut de la div parent */
+    margin-top: 0.5rem;
+    color: #f7971e;
+    font-size: 35px;
 }
 
 #copyright{
     display: flex;
+    justify-content: flex-end;
     color: white;
-    border: 2px solid gold;
+    /* margin top abaisse mon container  en bas */
+    margin-top: 35px;
+    /* padding right décole mon copyright de la bordure droite */
+    padding-right: 15px;
+    width: 200px;
+    height: 30px;
+    font-size: 10px;
 }
 
 
