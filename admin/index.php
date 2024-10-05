@@ -24,12 +24,7 @@
 
 
        // Exécution de la requête avec la méthode query
-        $stmt = $pdo->query($sql_plat);
-        $stmt = $pdo->query($sql_boissons);
-        $stmt = $pdo->query($sql_desserts);
+        $stmt = $pdo->query($sql_plats);
         
-        $stmt = $pdo->query($sql_pizza);
-        $stmt = $pdo->query($sql_boisson);
-        $stmt = $pdo->query($sql_dessert);
       
 ?>
