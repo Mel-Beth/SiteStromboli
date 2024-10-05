@@ -36,6 +36,7 @@ nav li{
     float: left;
     width: 10rem;
     text-align: center;
+    margin-right: 2rem;
 }
 
 nav a{
@@ -52,6 +53,7 @@ nav a:hover{
 
 .barreNav{
     margin: 10px;
+    margin-right: 10rem;
 }
 
 header{
