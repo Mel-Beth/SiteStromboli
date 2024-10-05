@@ -1,0 +1,19 @@
+
+#containerLogoStromboli{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+     height:auto;
+     width: 3.5rem;
+    border: 2px black solid;
+}
+
+
+
+
+#logoStromboli {
+    border-radius: 45%;
+    justify-content: left;
+    align-content: center;
+    justify-content: flex-start;
+}
