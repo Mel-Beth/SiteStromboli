@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="/Presentation/style.css">
+    <link rel="stylesheet" href="/footerCss/footerStyle.css">
+    <!-- font google pour titre h1 stromboli -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <!-- google font pour paragraphe dans encadré jaune -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap"
+    <script src="https://kit.fontawesome.com/677558f9a4.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body> <a name="ancreContact"></a>
+  <header>
+    <!-- BARRE DE MENU AVEC LES ONGLETS -->
+    <nav class="barreNav">
+        <li><a href="/Presentation/index.html#ancreAccueil">Accueil</a></li>
+        <li><a href="/">Menu</a></li>
+        <li><a href="/page3SuggestionChef/page3Suggestion.html#ancreSuggestion">Suggestion du Chef</a></li>
+        <li><a href="/page4Horaires/page4Horaires.html#ancreHoraires">Horaires</a></li>
+        <li><a href="/pageContactHtml/page5Contact.html#pageContact">Nous contacter</a></li>
+        <li><a href="/page6LivreDor/livreDOr.html#ancreLivreDOr">Livre d'or</a></li>
+    </nav>
+</header>
+   
+   <!--Partie contact-->
+   <section id="contact" class="section-contact">
+    <h3>Parlons de votre projet</h3>
+    <form method="get" action="#">
+      <div class="form-nom-email">
+        <div class="form-column">
+          <label for="nom">nom</label>
+          <input type="text" name="nom" id="nom" />
+        </div>
+        <div class="form-column">
+          <label for="email">email</label>
+          <input type="email" name="email" id="email" />
+        </div>
+      </div>
+      <label for="message">message</label>
+      <textarea name="message" id="message" rows="10"></textarea>
+      <input type="submit" value="ENVOYER" class="cta" />
+    </form>
+  </section>
+
+
+
+  <footer>
+    <div class="containerAdresse">
+        <i class="fa-solid fa-location-dot"></i>
+        <p id="nomLocation">Location</p>
+        <p id="adresseParagraphe">Restaurant Stromboli, 34 Av Charles Boutet <br>
+            08000 Charleville-Mézières</p>
+    </div>
+
+
+
+    <div class="iconContainer">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+    </div>
+
+    <div>
+    <p id="copyright">Copyright 2024</p>
+    </div>
+</footer>
+
+
+</body>
+</html> 
