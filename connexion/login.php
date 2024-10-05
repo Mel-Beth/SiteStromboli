@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       // Authentification réussie, redirection vers la page d'administration
       $_SESSION['username'] = $username;
       var_dump($_SESSION); // Check the session variables
-      header('Location: SiteStromboli/connexion/dashboard.html');
+      header('Location: admin/admin_interface.php');
       die('Redirecting to dashboard.html'); // Ensure the script terminates
       exit();
   } else {

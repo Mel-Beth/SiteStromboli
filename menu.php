@@ -70,7 +70,7 @@ if (!$result) {
         }
 
         echo '<div class="product-card" style="display: inline-block; margin: 10px;">';
-        echo '<img src="images/' . $row["photo"] . '" alt="' . $row["produit_nom"] . '">'; // Afficher l'image        
+        echo '<img src="img/' . $row["id"] . '.jpg" alt="' . $row["produit_nom"] . '" width="100" height="100">'; // Ajouter une photo pour chaque produit
         echo '<p>' . $row["produit_nom"] . '</p>';
         echo '<p>' . $row["description"] . '</p>';
         echo '<p>Prix : ' . $row["prix"] . '</p>';

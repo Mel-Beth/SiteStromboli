@@ -1,21 +1,39 @@
-<form action="supprimer_produit.php" method="POST">
+<?php
 
+// Define database connection parameters
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "stromboli";
 
-    <label for="categorie_select">Choisir le produits:</label>
+// Créer une connexion à la base de données
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-<select name="categorie" id="categorie_select">
-  <option value="">--Please choose an option--</option>
-  <option value="plat">Plat</option>
-  <option value="boisson">Boisson</option>
-  <option value="desert">Dessert</option>
-</select>
+// Vérifier la connexion
+if ($conn->connect_error) {
+    die("Erreur de connexion : " . $conn->connect_error);
+}
 
-    <input type="submit" value="Supprimer" class="submit" />
+// Récupérer l'ID du produit à supprimer
+$id = $_GET['id'];
 
-</form>
+// Afficher un message de confirmation avant de supprimer
+echo '<script>
+        if (confirm("Êtes-vous sûr de vouloir supprimer ce produit ?")) {
+            window.location.href = "supprimer_produit.php?id=' . $id . '";
+        } else {
+            window.location.href = "produits.php";
+        }
+    </script>';
+?>
 
-<?php 
-
-$sqlQuery = 'DELETE FROM produits WHERE *';
-
+<?php
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $sql = 'DELETE FROM produits WHERE id = \'' . $id . '\'';
+    $conn->query($sql);
+    echo 'Produit supprimé avec succès !';
+    header('Location: produits.php');
+    exit;
+}
 ?>
