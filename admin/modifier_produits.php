@@ -36,7 +36,24 @@ if ($result && $result->num_rows > 0) {
     echo "<label>Prix :</label>";
     echo "<input type='number' name='prix' value='" . $row['prix'] . "'>";
     echo "<br>";
-    echo "<input type='submit' value='Modifier'>";
+    echo "<label>Catégorie :</label>";
+    echo "<select name='id_catg'>";
+    echo "<option value='1'>Plat</option>";
+    echo "<option value='2'>Boisson</option>";
+    echo "<option value='3'>Dessert</option>";
+    echo "</select>";
+    echo "<br>";
+    echo '<script>
+            function modifierProduit() {
+                if (confirm("Êtes-vous sûr de vouloir modifier ce produit ?")) {
+                    document.forms[0].submit();
+                } else {
+                    window.location.href = "produits.php";
+                }
+            }
+        </script>';
+    echo "<input type='button' value='Modifier' onclick='modifierProduit()'>";
+    echo "<a href='produits.php'><input type='button' value='Retour'></a>";
     echo "</form>";
 } else {
     echo "Produit non trouvé";
@@ -47,17 +64,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nom = $_POST['nom'];
     $description = $_POST['description'];
     $prix = $_POST['prix'];
+    $id_catg = $_POST['id_catg'];
 
-    $sql = "UPDATE produits SET nom = ?, description = ?, prix = ? WHERE id = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssi", $nom, $description, $prix, $id);
-    $stmt->execute();
+    // Vérifier si le produit existe déjà
+    $sql_check = "SELECT * FROM produits WHERE nom = '$nom' AND id_catg = '$id_catg' AND id != '$id'";
+    $result_check = $conn->query($sql_check);
 
-    // Afficher un message de succès
-    echo "<p>Produit modifié avec succès !</p>";
+    if (!$result_check->num_rows > 0) {
+        // Le produit n'existe pas, on l'insère
+        $sql = "UPDATE produits SET nom = ?, description = ?, prix = ?, id_catg = ? WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssssi", $nom, $description, $prix, $id_catg, $id);
+        $stmt->execute();
 
-    // Redirection vers la page produits.php
-    header("Location: produits.php");
-    exit;
+        // Afficher un message de succès
+        echo "<p>Produit modifié avec succès !</p>";
+
+        // Redirection vers la page produits.php
+        header("Location: produits.php");
+        exit;
+    } else {
+        echo "Produit déjà existant";
+    }
 }
+
 ?>

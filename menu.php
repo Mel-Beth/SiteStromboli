@@ -25,7 +25,7 @@
     <header>
         <!-- BARRE DE MENU AVEC LES ONGLETS -->
 
-        <img src="connexion/img/logo.png" alt="logoStromboli" id="logoStromboli" width=100px>
+        <img src="img/logo.png" alt="logoStromboli" id="logoStromboli" width=100px>
         <nav class="barreNav">
             <li><a href="/Presentation/index.html#ancreAccueil">Accueil</a></li>
             <li><a href="/">Menu</a></li>

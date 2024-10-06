@@ -24,17 +24,28 @@
 
 
        // Exécution des requêtes avec la méthode query
-    try {
+       try {
         $pdo->query($sql_plat);
-        $pdo->query($sql_pizza);
+        $id_plat = $pdo->lastInsertId();
+        
         $pdo->query($sql_boissons);
-        $pdo->query($sql_boisson);
+        $id_boissons = $pdo->lastInsertId();
+        
         $pdo->query($sql_desserts);
+        $id_desserts = $pdo->lastInsertId();
+        
+        $sql_pizza = "INSERT INTO produits (nom, description, prix, id_catg) VALUES ('La Reine', 'C\'est une reine', 10, $id_plat), ('Le Roi', 'C\'est un Roi', 10, $id_plat), ('La Dame', 'C\'est une Dame', 10, $id_plat), ('Le Valet', 'C\'est un Valet', 10, $id_plat)";
+        $pdo->query($sql_pizza);
+        
+        $sql_boisson = "INSERT INTO produits (nom, description, prix, id_catg) VALUES ('Coca', 'C\'est un Coca', 3, $id_boissons), ('Fanta', 'C\'est un Fanta', 3, $id_boissons), ('Orangina', 'C\'est un Orangina', 3, $id_boissons), ('Eau', 'C\'est une Eau', 2, $id_boissons)";
+        $pdo->query($sql_boisson);
+        
+        $sql_dessert = "INSERT INTO produits (nom, description, prix, id_catg) VALUES ('Tiramisu', 'C\'est un Tiramisu', 3, $id_desserts), ('Tarte aux pommes', 'C\'est une Tarte aux pommes', 3, $id_desserts), ('Profiteroles', 'Ce sont des Profiteroles', 3, $id_desserts), ('Crêpes', 'Ces sont des Crêpes', 3, $id_desserts)";
         $pdo->query($sql_dessert);
         
         echo "Données insérées avec succès!";
         header('Location: admin_interface.php');
-    exit;
+        exit;
     } catch (PDOException $e) {
         echo "Erreur lors de l'insertion des données: " . $e->getMessage();
     }
