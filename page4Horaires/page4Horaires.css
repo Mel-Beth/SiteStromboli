@@ -42,4 +42,12 @@ p {
     align-items: flex-start;
     width: 100%;
     height: auto;
+    margin-bottom: 6.5vh;
+}
+
+body{
+    overflow: hidden;
+    margin: 0;
+    width: 100%;
+    height: auto;
 }

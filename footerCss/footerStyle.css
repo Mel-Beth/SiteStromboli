@@ -1,12 +1,13 @@
 footer{
     background-color: rgb(31, 31, 38);
     width: 100%;
-    height: auto;
-    margin-top:50px;
+    height: 8vh;
+    margin-top: 2.5vh;
     padding: 0;
     display:flex;
     justify-content: space-between;
     flex-direction: row;
+   
     
 }
 
@@ -77,7 +78,13 @@ footer{
 }
 
 
-
+  p {
+  font-family: "Playwrite DE Grund", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+  font-size: 14px;
+}
 
 
 

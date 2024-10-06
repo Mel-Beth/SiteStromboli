@@ -1,0 +1,16 @@
+h1 {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 600px;
+    font-style: bold;
+    font-size: 30px;
+}
+
+p {
+    font-family: "Playwrite DE Grund", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400px;
+    font-style: normal;
+    font-size: 15px;
+}
+

@@ -7,6 +7,7 @@
     border: 2px solid rgb(249, 241, 135);
     border-radius: 1rem;
     box-shadow: 0 0 15px #e17f08;
+    margin-top: 2rem;
     
     
 }
@@ -50,7 +51,7 @@
     transition: 0.5s;
     background-size: 200% auto;
     color: white;            
-    box-shadow: 0 0 20px #eee;
+    /* retrait de l'effet glow du btn horaires:  */
     border-radius: 10px;
     display: block;
    
@@ -58,7 +59,7 @@
 
   #btnHoraires:hover {
     background-position: right center; /* change the direction of the change here */
-    color: #fff;
+    color: #258ed8;
     text-decoration: none;
   }
  

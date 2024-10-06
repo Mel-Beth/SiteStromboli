@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <link rel="stylesheet" href="/Presentation/style.css">
-    <link rel="stylesheet" href="/footerCss/footerStyle.css">
     <!-- font google pour titre h1 stromboli -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,41 +14,57 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap"
     <script src="https://kit.fontawesome.com/677558f9a4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/page5ContactHtml/page5Contact.css">
+    <link rel="stylesheet" href="/Presentation/logoStomboli.css">
+    <link rel="stylesheet" href="/footerCss/footerStyle.css">
 </head>
 
-
-<body> <a name="ancreContact"></a>
+<a name="ancreContact"></a>
+<body> 
   <header>
+    <div id="containerLogoStromboli">
+      <img src="/image/logoStromboli.jpeg" alt="logoStromboli" id="logoStromboli">
+  </div>
     <!-- BARRE DE MENU AVEC LES ONGLETS -->
     <nav class="barreNav">
         <li><a href="/Presentation/index.html#ancreAccueil">Accueil</a></li>
         <li><a href="/">Menu</a></li>
         <li><a href="/page3SuggestionChef/page3Suggestion.html#ancreSuggestion">Suggestion du Chef</a></li>
         <li><a href="/page4Horaires/page4Horaires.html#ancreHoraires">Horaires</a></li>
-        <li><a href="/pageContactHtml/page5Contact.html#pageContact">Nous contacter</a></li>
+        <li><a href="/page5ContactHtml/page5Contact.html#ancreContact">Nous contacter</a></li>
         <li><a href="/page6LivreDor/livreDOr.html#ancreLivreDOr">Livre d'or</a></li>
     </nav>
 </header>
    
    <!--Partie contact-->
    <section id="contact" class="section-contact">
-    <h3>Parlons de votre projet</h3>
+    <h3 id="h3">Parlons de votre projet</h3>
     <form method="get" action="#">
       <div class="form-nom-email">
         <div class="form-column">
-          <label for="nom">nom</label>
+          <label for="nom">Nom</label>
           <input type="text" name="nom" id="nom" />
         </div>
         <div class="form-column">
-          <label for="email">email</label>
+          <label for="email">Email</label>
           <input type="email" name="email" id="email" />
         </div>
       </div>
-      <label for="message">message</label>
+
+      <div class ="form-message">
+      <label for="message">Message</label>
       <textarea name="message" id="message" rows="10"></textarea>
-      <input type="submit" value="ENVOYER" class="cta" />
+      </div>
+      
+      <div class="text-box">
+      <button type="submit" value="ENVOYER" class="btnContact" />Envoyer</button>
+      </div>
     </form>
+    <div class="photoContact">
+      <img src="/image/boiteAuxLettres.jpg" alt="imgBoiteAuxLettres" id="photoContact">
+    </div>
   </section>
+  
 
 
 
