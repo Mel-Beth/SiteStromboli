@@ -1,0 +1,67 @@
+
+
+main li{
+    display: flex;
+    /* le align-items: center permet d'aligner les puces de liste avec le text */
+    align-items: center;
+    width: 100%;
+    height: auto;
+    list-style-type: none;
+    font-family: "Playwrite DE Grund", cursive;
+    font-weight: 600;
+    float: left;
+    text-align: left;
+    margin-left: 2rem;
+    margin-right: 60rem;
+    justify-content: flex-start;
+    margin-top: 1.4rem;
+    color: aliceblue;
+    text-shadow: 10px rgb(165, 165, 165);
+   
+}
+
+/* pour les puces */
+main li::before {
+    content: "";
+    vertical-align: middle;
+    display: inline-block;
+    border-radius: 50%;
+    width: 0.5rem; /* adjust the size of the square */
+    height: 0.5rem;
+    background-color: #a8720f; /* adjust the color of the square */
+    margin-right: 0.5rem; /* add some space between the square and the text */
+  }
+
+.comClients h1{
+    background-color: aliceblue;
+    font-weight: 700;
+    font-size: 35px;
+    margin-right: 55rem;
+    text-align: center;
+    border-radius: 1rem;
+    padding-bottom: .9rem;
+    /* margin top colle mon titre h1 au container en haut */
+    margin-top: 1rem;
+    margin-bottom: 0.85rem;
+}
+
+#h1Container{
+    
+    justify-content: flex-start;
+   width: 80rem;
+   margin-left: 1rem;
+   margin-bottom: 2rem;
+   margin-top: 0;
+}
+
+.livreDorFooter{
+    display: flex;
+    width: 100vw;
+}
+
+.comClients img{
+    width: 30%;
+    height: 2rem;
+    justify-items: center;
+}
+
