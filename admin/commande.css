@@ -1,0 +1,90 @@
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+} 
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #4CAF50;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  color: #4CAF50;
+  padding: 20px;
+}
+
+#customer-table, #order-table, #product-table, #report-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#customer-table th, #order-table th, #product-table th, #report-table th {
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: left;
+}
+
+#customer-table td, #order-table td, #product-table td, #report-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+#chart-container {
+  width: 100%;
+  height: 400px;
+  margin: 20px auto;
+}
+
+#myChart {
+  width: 100%;
+  height: 400px;
+}
+
+#report-container {
+  width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#report-table {
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  clear: both;
+}

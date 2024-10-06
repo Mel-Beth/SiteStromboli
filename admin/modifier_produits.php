@@ -1,3 +1,17 @@
+<body>
+    
+
+<header>
+        <nav>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="produits.php">Produits</a></li>
+                <li><a href="commande.php">Commande</a></li>
+                <li><a href="administrateur.php">Administrateur</a></li>
+            </ul>
+        </nav>
+    </header>
+   <main> 
 <?php
 
 // Define database connection parameters
@@ -7,8 +21,13 @@ $password = "";
 $dbname = "stromboli";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
+try {
+    $db = new PDO('mysql:host=localhost;dbname=stromboli', 'root', '');
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo 'Erreur de connexion : ' . $e->getMessage();
+    exit();
+}
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -52,8 +71,8 @@ if ($result && $result->num_rows > 0) {
                 }
             }
         </script>';
-    echo "<input type='button' value='Modifier' onclick='modifierProduit()'>";
-    echo "<a href='produits.php'><input type='button' value='Retour'></a>";
+        echo "<a href='#' onclick='modifierProduit()'>Modifier</a>";
+        echo "<a href='produits.php' class='retour'>Retour</a>";
     echo "</form>";
 } else {
     echo "Produit non trouvé";
@@ -89,3 +108,142 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
+</main>
+<footer>
+        <p>&copy; 2023 - Tous droits réservés</p>
+</footer>
+</body>
+
+<style>
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 50px; /* ajuster la valeur en fonction de la hauteur du footer */
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px; /* ajuster la valeur en fonction de la hauteur du footer */
+}
+
+main a {
+  text-decoration: none;
+  color: #ffffff;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  text-align: center;
+  width: 200px; /* ajuster la largeur en fonction de vos besoins */
+}
+
+main a:hover {
+    background-color: #3e8e41;
+    color: #ffffff;
+}
+
+main p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  text-align: center;
+}
+
+main a {
+    margin: 10px;
+    padding: 10px;
+}
+
+main form {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+main form label {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  text-align: center;
+}
+
+main form input, main form textarea {
+  font-family: Arial, sans-serif;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  width: 300px; /* ajuster la largeur en fonction de vos besoins */
+  margin-bottom: 20px;
+}
+
+main form input[type="submit"] {
+  background-color: #4CAF50;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 10px;
+  display: inline-block;
+}
+
+main form input[type="submit"]:hover {
+  background-color: #3e8e41;
+  color: #ffffff;
+}
+
+footer {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+  height: 50px; /* ajuster la valeur en fonction de la hauteur du footer */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+footer p {
+    color: white;
+}
+
+</style>

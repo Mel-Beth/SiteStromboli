@@ -14,7 +14,8 @@
             <ul>
                 <li><a href="#">Accueil</a></li>
                 <li><a href="produits.php">Produits</a></li>
-                <li><a href="#">Paramètres</a></li>
+                <li><a href="commande.php">Commande</a></li>
+                <li><a href="administrateur.php">Administrateur</a></li>
             </ul>
         </nav>
     </header>
@@ -32,12 +33,19 @@ $password = "";
 $dbname = "stromboli";
 
 // Création de la connexion
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Vérification de la connexion
-if ($conn->connect_error) {
-    die("Erreur de connexion : " . $conn->connect_error);
+try {
+    $db = new PDO('mysql:host=localhost;dbname=stromboli', 'root', '');
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo 'Erreur de connexion : ' . $e->getMessage();
+    exit();
 }
+
+if ($db->errorCode() !== '00000') {
+    echo 'Erreur de connexion : ' . $db->errorInfo()[2];
+    exit();
+}
+
 ?>
 
     </main>

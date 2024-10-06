@@ -1,3 +1,8 @@
+<?php
+header('Location: connexion_admin.html');
+exit;
+?>
+
 <?php 
     // Configuration de la base de données
     $host = 'localhost'; // Adresse du serveur
@@ -49,5 +54,6 @@
     } catch (PDOException $e) {
         echo "Erreur lors de l'insertion des données: " . $e->getMessage();
     }
+
 ?>
 

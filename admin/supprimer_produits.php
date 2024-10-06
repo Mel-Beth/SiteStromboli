@@ -1,4 +1,18 @@
-<?php
+<body>
+    
+
+<header>
+        <nav>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="produits.php">Produits</a></li>
+                <li><a href="commande.php">Commande</a></li>
+                <li><a href="administrateur.php">Administrateur</a></li>
+            </ul>
+        </nav>
+    </header>
+   <main> 
+    <?php
 
 // Define database connection parameters
 $servername = "localhost";
@@ -26,46 +40,23 @@ if ($result && $result->num_rows > 0) {
     $row = $result->fetch_assoc();
 
     // Afficher les données du produit à supprimer
-    echo "<form action='' method='post'>";
-    echo "<label>Nom :</label>";
-    echo "<input type='text' name='nom' value='" . $row['nom'] . "' readonly>";
-    echo "<br>";
-    echo "<label>Description :</label>";
-    echo "<textarea name='description' readonly>" . $row['description'] . "</textarea>";
-    echo "<br>";
-    echo "<label>Prix :</label>";
-    echo "<input type='number' name='prix' value='" . $row['prix'] . "' readonly>";
-    echo "<br>";
-    echo "<label>Catégorie :</label>";
-    echo "<select name='id_catg' disabled>";
-    echo "<option value='1'>Plat</option>";
-    echo "<option value='2'>Boisson</option>";
-    echo "<option value='3'>Dessert</option>";
-    echo "</select>";
-    echo "<br>";
-    echo '<script>
-            function supprimerProduit() {
-                if (confirm("Êtes-vous sûr de vouloir supprimer ce produit ?")) {
-                    document.forms[0].submit();
-                } else {
-                    window.location.href = "produits.php";
-                }
-            }
-        </script>';
-    echo "<input type='button' value='Supprimer' onclick='supprimerProduit()'>";
-    echo "<a href='produits.php'><input type='button' value='Retour'></a>";
-    echo "</form>";
+    echo "<p>Vous êtes sur le point de supprimer le produit suivant :</p>";
+    echo "<p>Nom : " . $row['nom'] . "</p>";
+    echo "<p>Description : " . $row['description'] . "</p>";
+    echo "<p>Prix : " . $row['prix'] . "</p>";
+    echo "<p>Catégorie : " . $row['id_catg'] . "</p>";
+
+    echo "<p>Voulez-vous vraiment supprimer ce produit ?</p>";
+    echo "<a href='?action=delete&id=$id' class='supprimer' onclick='return confirm(\"Êtes-vous sûr de vouloir supprimer ce produit ?\")'>Supprimer</a>";
+    echo "<a href='produits.php' class='retour'>Retour</a>";
 } else {
     echo "Produit non trouvé";
 }
 
 // Traitement des données du produit à supprimer
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_GET['action']) && $_GET['action'] == 'delete') {
     $sql = "DELETE FROM produits WHERE id = '$id'";
     $conn->query($sql);
-
-    // Afficher un message de succès
-    echo "<p>Produit supprimé avec succès !</p>";
 
     // Redirection vers la page produits.php
     header("Location: produits.php");
@@ -73,3 +64,93 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
+</main>
+<footer>
+        <p>&copy; 2023 - Tous droits réservés</p>
+</footer>
+</body>
+
+<style>
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 50px; /* ajuster la valeur en fonction de la hauteur du footer */
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  border: solid 1px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px; /* ajuster la valeur en fonction de la hauteur du footer */
+}
+
+main a {
+  text-decoration: none;
+  color: #ffffff;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  text-align: center;
+  width: 200px; /* ajuster la largeur en fonction de vos besoins */
+}
+
+main a:hover {
+    background-color: #3e8e41;
+    color: #ffffff;
+}
+
+main p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  text-align: center;
+}
+
+footer {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+  height: 50px; /* ajuster la valeur en fonction de la hauteur du footer */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+footer p {
+    color: white;
+}
+
+</style>

@@ -35,6 +35,8 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 2em;
+    margin-bottom: 50px; /* ajuster la valeur en fonction de la hauteur du footer */
+
 }
 
 section {
@@ -50,5 +52,6 @@ footer {
     color: #fff;
     padding: 1em;
     text-align: center;
+    margin-top: 20px;
     clear: both;
-}
+  }
