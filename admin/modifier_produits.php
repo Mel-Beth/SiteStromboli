@@ -1,116 +1,113 @@
 <body>
-    
 
 <header>
-        <nav>
-            <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="produits.php">Produits</a></li>
-                <li><a href="commande.php">Commande</a></li>
-                <li><a href="administrateur.php">Administrateur</a></li>
-            </ul>
-        </nav>
-    </header>
-   <main> 
-<?php
+    <nav>
+        <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="produits.php">Produits</a></li>
+            <li><a href="commande.php">Commande</a></li>
+            <li><a href="administrateur.php">Administrateur</a></li>
+        </ul>
+    </nav>
+</header>
 
-// Define database connection parameters
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "stromboli";
+<main>
+    <?php
 
-// Create connection
-try {
-    $db = new PDO('mysql:host=localhost;dbname=stromboli', 'root', '');
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo 'Erreur de connexion : ' . $e->getMessage();
-    exit();
-}
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+    // Define database connection parameters
+    $servername = "localhost";
+    $username = "root"; // Remplacez par votre nom d'utilisateur
+    $password = ""; // Remplacez par votre mot de passe
+    $dbname = "stromboli";
 
-// Récupérer l'ID du produit à modifier
-$id = $_GET['id'];
-
-// Récupérer les données du produit à modifier
-$sql = "SELECT * FROM produits WHERE id = '$id'";
-$result = $conn->query($sql);
-
-// Vérifier si le résultat est valide
-if ($result && $result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-
-    // Afficher les données du produit à modifier
-    echo "<form action='' method='post'>";
-    echo "<label>Nom :</label>";
-    echo "<input type='text' name='nom' value='" . $row['nom'] . "'>";
-    echo "<br>";
-    echo "<label>Description :</label>";
-    echo "<textarea name='description'>" . $row['description'] . "</textarea>";
-    echo "<br>";
-    echo "<label>Prix :</label>";
-    echo "<input type='number' name='prix' value='" . $row['prix'] . "'>";
-    echo "<br>";
-    echo "<label>Catégorie :</label>";
-    echo "<select name='id_catg'>";
-    echo "<option value='1'>Plat</option>";
-    echo "<option value='2'>Boisson</option>";
-    echo "<option value='3'>Dessert</option>";
-    echo "</select>";
-    echo "<br>";
-    echo '<script>
-            function modifierProduit() {
-                if (confirm("Êtes-vous sûr de vouloir modifier ce produit ?")) {
-                    document.forms[0].submit();
-                } else {
-                    window.location.href = "produits.php";
-                }
-            }
-        </script>';
-        echo "<a href='#' onclick='modifierProduit()'>Modifier</a>";
-        echo "<a href='produits.php' class='retour'>Retour</a>";
-    echo "</form>";
-} else {
-    echo "Produit non trouvé";
-}
-
-// Traitement des données du produit à modifier
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nom = $_POST['nom'];
-    $description = $_POST['description'];
-    $prix = $_POST['prix'];
-    $id_catg = $_POST['id_catg'];
-
-    // Vérifier si le produit existe déjà
-    $sql_check = "SELECT * FROM produits WHERE nom = '$nom' AND id_catg = '$id_catg' AND id != '$id'";
-    $result_check = $conn->query($sql_check);
-
-    if (!$result_check->num_rows > 0) {
-        // Le produit n'existe pas, on l'insère
-        $sql = "UPDATE produits SET nom = ?, description = ?, prix = ?, id_catg = ? WHERE id = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssssi", $nom, $description, $prix, $id_catg, $id);
-        $stmt->execute();
-
-        // Afficher un message de succès
-        echo "<p>Produit modifié avec succès !</p>";
-
-        // Redirection vers la page produits.php
-        header("Location: produits.php");
-        exit;
-    } else {
-        echo "Produit déjà existant";
+    try {
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $e) {
+        echo 'Erreur de connexion : ' . $e->getMessage();
+        exit();
     }
-}
 
-?>
+    // Récupérer l'ID du produit à modifier
+    $id = $_GET['id'];
+
+    // Récupérer les données du produit à modifier
+    $sql = "SELECT * FROM produits WHERE id = '$id'";
+    $result = $conn->query($sql);
+
+    // Vérifier si le résultat est valide
+    if ($result) {
+      $row = $result->fetch(PDO::FETCH_ASSOC);
+
+        // Afficher les données du produit à modifier
+        echo "<form action='' method='post'>";
+        echo "<label>Nom :</label>";
+        echo "<input type='text' name='nom' value='" . $row['nom'] . "'>";
+        echo "<br>";
+        echo "<label>Description :</label>";
+        echo "<textarea name='description'>" . $row['description'] . "</textarea>";
+        echo "<br>";
+        echo "<label>Prix :</label>";
+        echo "<input type='number' name='prix' value='" . $row['prix'] . "'>";
+        echo "<br>";
+        echo "<label>Catégorie :</label>";
+        echo "<select name='id_catg'>";
+        echo "<option value='1'>Plat</option>";
+        echo "<option value='2'>Boisson</option>";
+        echo "<option value='3'>Dessert</option>";
+        echo "</select>";
+        echo "<br>";
+        echo '<script>
+                function modifierProduit() {
+                    if (confirm("Êtes-vous sûr de vouloir modifier ce produit ?")) {
+                        document.forms[0].submit();
+                    } else {
+                        window.location.href = "produits.php";
+                    }
+                }
+            </script>';
+        echo "<a href='produits.php' onclick='modifierProduit()'>Modifier</a>";
+        echo "<a href='produits.php' class='retour'>Retour</a>";
+        echo "</form>";
+    } else {
+        echo "Produit non trouvé";
+    }
+
+    // Traitement des données du produit à modifier
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $nom = $_POST['nom'];
+        $description = $_POST['description'];
+        $prix = $_POST['prix'];
+        $id_catg = $_POST['id_catg'];
+
+        // Vérifier si le produit existe déjà
+        $sql_check = "SELECT * FROM produits WHERE nom = '$nom' AND id_catg = '$id_catg' AND id != '$id'";
+$result_check = $conn->query($sql_check);
+
+if ($result_check->rowCount() == 0) {
+  ob_start();
+
+  // Le produit n'existe pas, on l'insère
+$sql = "UPDATE produits SET nom = ?, description = ?, prix = ?, id_catg = ? WHERE id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bindParam(1, $nom);
+$stmt->bindParam(2, $description);
+$stmt->bindParam(3, $prix);
+$stmt->bindParam(4, $id_catg);
+$stmt->bindParam(5, $id);
+$stmt->execute();
+
+// Redirection vers la page produits.php
+echo "<script>window.location.href='produits.php';</script>";
+exit;
+        }
+    }
+
+    ?>
 </main>
+
 <footer>
-        <p>&copy; 2023 - Tous droits réservés</p>
+    <p>&copy; 2023 - Tous droits réservés</p>
 </footer>
 </body>
 

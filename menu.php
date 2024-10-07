@@ -29,7 +29,7 @@
         <img src="admin/img/logo.png" alt="logoStromboli" id="logoStromboli" width=100px>
         <nav class="barreNav">
             <li><a href="/Presentation/index.html#ancreAccueil">Accueil</a></li>
-            <li><a href="/menu.php">Menu</a></li>
+            <li><a href="/page2Menu/menu.php">Menu</a></li>
             <li><a href="/page3SuggestionChef/page3Suggestion.html#ancreSuggestion">Suggestion du Chef</a></li>
             <li><a href="/page4Horaires/page4Horaires.html#ancreHoraires">Horaires</a></li>
             <li><a href="/pageContactHtml/page5Contact.html#pageContact">Nous contacter</a></li>
