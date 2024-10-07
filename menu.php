@@ -25,7 +25,7 @@
     <header>
         <!-- BARRE DE MENU AVEC LES ONGLETS -->
 
-        <img src="img/logo.png" alt="logoStromboli" id="logoStromboli" width=100px>
+        <img src="admin/img/logo.png" alt="logoStromboli" id="logoStromboli" width=100px>
         <nav class="barreNav">
             <li><a href="/Presentation/index.html#ancreAccueil">Accueil</a></li>
             <li><a href="/">Menu</a></li>
@@ -52,10 +52,10 @@ if ($conn->connect_error) {
     die("Erreur de connexion : " . $conn->connect_error);
 }
 
-$result = $conn->query("SELECT p.id, p.nom AS produit_nom, c.nom AS categorie_nom, p.description, p.prix
-                         FROM produits p
-                         JOIN catg_produits c ON p.id_catg = c.id_catg
-                         ORDER BY c.id_catg");
+$result = $conn->query("SELECT p.id, p.nom AS produit_nom, c.nom AS categorie_nom, p.description, p.prix, p.image
+                    FROM produits p
+                    JOIN catg_produits c ON p.id_catg = c.id_catg
+                    ORDER BY c.id_catg");
 
 if (!$result) {
     echo "Erreur : " . $conn->error;
@@ -70,8 +70,7 @@ if (!$result) {
         }
 
         echo '<div class="product-card" style="display: inline-block; margin: 10px;">';
-        echo '<img src="img/' . $row["id"] . '.jpg" alt="' . $row["produit_nom"] . '" width="100" height="100">'; // Ajouter une photo pour chaque produit
-        echo '<p>' . $row["produit_nom"] . '</p>';
+        echo '<p style="font-size:20px;">' . $row["produit_nom"] . '</p>';
         echo '<p>' . $row["description"] . '</p>';
         echo '<p>Prix : ' . $row["prix"] . '</p>';
         echo '</div>';

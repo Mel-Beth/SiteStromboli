@@ -10,7 +10,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#">Accueil</a></li>
+                <li><a href="admin_interface.php">Accueil</a></li>
                 <li><a href="produits.php">Produits</a></li>
                 <li><a href="commande.php">Commande</a></li>
                 <li><a href="administrateur.php">Administrateur</a></li>
@@ -45,6 +45,7 @@
         <input type="submit" name="delete_admin" value="Supprimer compte administrateur">
     </form>
 </div>
+
     <?php
     // Configuration de la base de données
     $host = 'localhost'; // Adresse du serveur
@@ -52,48 +53,52 @@
     $username = 'root'; // Nom d'utilisateur
     $password = ''; // Mot de passe
 
-    // Connect to the database
+    // Connexion à la base de données
     $conn = mysqli_connect($host, $username, $password, $dbname);
 
-    // Check connection
+    // Vérification de la connexion
     if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
+        die("Erreur de connexion : " . mysqli_connect_error());
     }
 
-    // Add new administrator account
+    // Ajout d'un nouveau compte administrateur
     if (isset($_POST['add_admin'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
+        // Requête SQL pour insérer le nouveau compte administrateur
         $query = "INSERT INTO utilisateurs (username, password) VALUES ('$username', '$password_hash')";
         mysqli_query($conn, $query);
         header('Location: administrateur.php?success=add');
         exit;
     }
 
-    // Modify existing administrator account
+    // Modification d'un compte administrateur existant
     if (isset($_POST['modify_admin'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
+        // Requête SQL pour mettre à jour le compte administrateur
         $query = "UPDATE utilisateurs SET username='$username', password='$password_hash' WHERE username='$username'";
         mysqli_query($conn, $query);
         header('Location: administrateur.php?success=modify');
         exit;
     }
 
-    // Delete administrator account
+    // Suppression d'un compte administrateur
     if (isset($_POST['delete_admin'])) {
         $username = $_POST['username'];
+
+        // Requête SQL pour supprimer le compte administrateur
         $query = "DELETE FROM utilisateurs WHERE username='$username'";
         mysqli_query($conn, $query);
         header('Location: administrateur.php?success=delete');
         exit;
     }
 
-    // Close connection
+    // Fermeture de la connexion à la base de données
     mysqli_close($conn);
     ?>
 

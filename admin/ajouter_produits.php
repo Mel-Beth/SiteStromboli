@@ -9,48 +9,48 @@
         </nav>
     </header>
 
-<?php
+    <?php
+// Démarrer la session
 session_start();
 
-
-// Define database connection parameters
+// Définir les paramètres de connexion à la base de données
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "stromboli";
 
-
-// Create connection
+// Créer la connexion
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+// Vérifier la connexion
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Erreur de connexion : " . $conn->connect_error);
 }
 
-// Retrieve categories from the database
+// Récupérer les catégories à partir de la base de données
 $stmt = $conn->prepare("SELECT DISTINCT id_catg, nom FROM catg_produits");
 $stmt->execute();
 $result = $stmt->get_result();
-$categories = array(); // Initialize the $categories array
+$categories = array(); // Initialiser le tableau des catégories
 while ($row = $result->fetch_assoc()) {
     $categories[$row['id_catg']] = $row['nom'];
 }
-$categories = array_unique($categories); // Remove duplicates from the $categories array
+$categories = array_unique($categories); // Supprimer les doublons du tableau des catégories
 
-
-// Handle product addition
+// Gérer l'ajout d'un produit
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Préparer la requête SQL pour insérer un nouveau produit
     $stmt = $conn->prepare("INSERT INTO produits (nom, description, prix, id_catg) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("sssi", $_POST["nom"], $_POST["description"], $_POST["prix"], $_POST["categorie"]);
     $stmt->execute();
 
+    // Définir un message de succès et rediriger vers la même page
     $_SESSION["message"] = "Produit enregistré avec succès !";
-    header("Location: ".$_SERVER["PHP_SELF"]); // Redirige vers la même page
+    header("Location: ".$_SERVER["PHP_SELF"]); // Rediriger vers la même page
     exit;
 }
 
-// Afficher le message de confirmation si disponible
+// Afficher le message de succès si disponible
 if (isset($_SESSION["message"])) {
     echo "<p style='color: green;'>".$_SESSION["message"]."</p>";
     unset($_SESSION["message"]); // Supprimer le message après affichage
@@ -59,7 +59,7 @@ if (isset($_SESSION["message"])) {
     <a href="produits.php"><button type="button">Retour</button></a>
     <?php
 } else {
-    // Form to add a product
+    // Formulaire pour ajouter un produit
     ?>
     <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
         <label for="nom">Nom :</label>
@@ -69,18 +69,18 @@ if (isset($_SESSION["message"])) {
         <label for="prix">Prix :</label>
         <input required type="number" id="prix" name="prix"><br><br>
         <label for="categorie">Catégorie :</label>
-        <div class="select-container"></div>
-        <select id="categorie" name="categorie">
-            <?php foreach ($categories as $id => $nom) { ?>
-                <option value="<?php echo $id; ?>"><?php echo $nom; ?></option>
-            <?php } ?>
-        </select><br><br>
-        </div>
+        <div class="select-container">
+            <select id="categorie" name="categorie">
+                <?php foreach ($categories as $id => $nom) { ?>
+                    <option value="<?php echo $id; ?>"><?php echo $nom; ?></option>
+                <?php } ?>
+            </select>
+        </div><br><br>
         <div class="boutons">
-  <button>Ajouter un nouveau produit</button>
-  <a href="produits.php"><button type="button" form="none" onclick="history.back()">Retour</button>
-  </a>
-</div>
+            <button>Ajouter un nouveau produit</button>
+            <a href="produits.php"><button type="button" form="none" onclick="history.back()">Retour</button>
+            </a>
+        </div>
     </form>
     <?php
 }

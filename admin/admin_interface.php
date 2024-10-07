@@ -24,30 +24,34 @@
             <h1>Bienvenue sur l'interface d'administration</h1>
             
         </section>
+<div>
+<?php
+            // Connexion à la base de données
+            // Définition des informations de connexion à la base de données
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $dbname = "stromboli";
 
-        <?php
-// Connexion à la base de données
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "stromboli";
+            // Création de la connexion à la base de données avec PDO
+            try {
+                $db = new PDO('mysql:host=localhost;dbname=stromboli', 'root', '');
+                // Définition du mode d'erreur pour afficher les erreurs de connexion
+                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            } catch (PDOException $e) {
+                // Affichage d'un message d'erreur en cas de problème de connexion
+                echo 'Erreur de connexion : ' . $e->getMessage();
+                exit();
+            }
 
-// Création de la connexion
-try {
-    $db = new PDO('mysql:host=localhost;dbname=stromboli', 'root', '');
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo 'Erreur de connexion : ' . $e->getMessage();
-    exit();
-}
-
-if ($db->errorCode() !== '00000') {
-    echo 'Erreur de connexion : ' . $db->errorInfo()[2];
-    exit();
-}
-
-?>
-
+            // Vérification si la connexion à la base de données a réussi
+            if ($db->errorCode() !== '00000') {
+                // Affichage d'un message d'erreur en cas de problème de connexion
+                echo 'Erreur de connexion : ' . $db->errorInfo()[2];
+                exit();
+            }
+            ?>
+</div>
     </main>
     <footer>
         <p>&copy; 2023 - Tous droits réservés</p>
