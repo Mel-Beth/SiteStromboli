@@ -1,0 +1,13 @@
+.cadrePresentation{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(198, 173, 32);
+    height:30rem;
+    width: 20rem;
+    margin: 40 px auto;
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgb(112, 102, 44);
+    justify-content: center;
+}
