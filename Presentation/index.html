@@ -5,48 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="logoStomboli.css">
     <link rel="stylesheet" href="/css productCards/productCards.css">
     <link rel="stylesheet" href="/cadrepresentation/cadreGauche.css">
+    <link rel="stylesheet" href="/footerCss/footerStyle.css">
+   <script src="https://kit.fontawesome.com/677558f9a4.js" crossorigin="anonymous"></script>
     <title>Accueil</title>
+    <!-- font google pour titre h1 stromboli -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <!-- google font pour paragraphe dans encadré jaune -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap" rel="stylesheet">
+
+
+
+
+
+
 </head>
+
 
 <body>
     <header>
+        <div id="containerLogoStromboli">
+            <img src="/image/logoStromboli.jpeg" alt="logoStromboli" id="logoStromboli">
+        </div>
         <!-- BARRE DE MENU AVEC LES ONGLETS -->
-        <nav>
-            <li><a href="id=accueil">Accueil</a></li>
-            <li><a href="id=menu">Menu</a></li>
-            <li><a href="suggestionChef">Suggestion du Chef</a></li>
-            <li><a href="horaires">Horaires</a></li>
-            <li><a href="contacts">Nous contacter</a></li>
-            <li><a href="livredor">Livre d'or</a></li>
+        <nav class="barreNav">
+            <li><a href="/Presentation/index.html#ancreAccueil">Accueil</a></li>
+            <li><a href="/menu.php">Menu</a></li>
+            <li><a href="/page3SuggestionChef/page3Suggestion.html#ancreSuggestion">Suggestion du Chef</a></li>
+            <li><a href="/page4Horaires/page4Horaires.html#ancreHoraires">Horaires</a></li>
+            <li><a href="/page5ContactHtml/page5Contact.html#ancreContact">Nous contacter</a></li>
+            <li><a href="/page6LivreDor/livreDOr.html#ancreLivreDOr">Livre d'or</a></li>
         </nav>
     </header>
 
     <main>
             <!-- DOIT ETRE TOUT A GAUCHE DU MAIN   -->
-        <section class="cadrePresentation">
-
-            <div class="textPresentation">
+        <section class="cadrePresentationSection">
+            <div class="margeCadrePresentation">
+                <div class="cadrePresentation">
           
-                <h1>Stromboni, une affaire familiale</h1>
-            
-                    <p>Pizzaiolo depuis 8 générations, blablablablablablablablablabla
-                    blablablablablablablablablablablablablablablablablablablablabla
-                    </p>
+                        <h1 style="text-align: center;" id="titrePresentation">Stromboli,<br> une affaire familiale</h1>
+                            <p id="paraStromboli"> Bienvenue chez Stromboli! Découvrez nos délicieuses pizzas, préparées avec amour et des ingrédients frais. Venez les déguster dans une atmosphère chaleureuse et conviviale et partager un bon moment avec vos proches.
+                            </p>
 
-            </div>
-
-            <div>
-                <button id="btnHoraires">Horaires</button>
-            </div>
                 
-                
-
-
-
-
-        </section>
+                    <div id="btn">
+                        <a href="/page4Horaires/page4Horaires.html#ancreHoraires"><button id="btnHoraires">Horaires</button></a>
+                    </div>
+                </div>
+            </div>
+         </section>
         
         
         
@@ -64,7 +78,7 @@
             <div id="boisson">
                 <!-- PHOTO BOISSON POUR IMAGE DU MILIEU VERS PAGE MENU -->
                  <a href="page2Menu.html#paragrapheBoisson" >
-                    <img src="/image/boisson.jpg" alt="imgBoissonVersMenuDessert" class="imgCardBoisson">
+                    <img src="/image/boisson.jpg" alt="imgBoissonVersMenuDessert" id="imgCardBoisson">
                  </a>
             </div>
 
@@ -72,7 +86,7 @@
             <div id="dessert">
                 <!-- PHOTO DESSERT POUR IMAGE DE DROITE VERS LA PAGE MENU QUAND ON CLIQUE DESSUS -->
                  <a href="page2Menu.html#paragrapheDessert">
-                 <img src="" alt="imageDessertVersMenuDessert" class="imgCardDessert">
+                 <img src="/image/dessert.jpg" alt="imageDessertVersMenuDessert" class="imgCardDessert">
                  </a>
             </div>
                   
@@ -81,9 +95,29 @@
 
     </main>
 
-    <footer>
+   
+        <footer>
+            <div class="containerAdresse">
+                <i class="fa-solid fa-location-dot"></i>
+                <p id="nomLocation">Location</p>
+                <p id="adresseParagraphe">Restaurant Stromboli, 34 Av Charles Boutet <br>
+                    08000 Charleville-Mézières</p>
+            </div>
 
-    </footer>
+
+
+            <div class="iconContainer">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+
+            <div>
+            <p id="copyright">Copyright 2024</p>
+            </div>
+        </footer>
+
+   
 
 </body>
 

@@ -1,0 +1,91 @@
+footer{
+    background-color: rgb(31, 31, 38);
+    width: 100%;
+    height: 8vh;
+    margin-top: 2.5vh;
+    padding: 0;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+   
+    
+}
+
+
+/* TOUTE LA DIV ICON/LOCATION/ADRESSE */
+.containerAdresse{
+    display: flex;
+    flex-direction: row;
+   
+}
+
+/* icone de location */
+.fa-location-dot{
+    padding:8px;
+    color:#F7971E ;
+   
+}
+
+
+#nomLocation{
+    color: aliceblue;
+    font-size: 11px;
+    margin: 5px;
+    padding-top: 2px;
+
+}
+
+#adresseParagraphe{
+
+    display: flex;
+    width: 15rem;
+    height: 5rem;
+    padding-left:10px;
+    color: aliceblue;
+    padding-top: 2.5px;
+    margin: 5px;
+    font-size: 10px;
+
+   
+}
+
+.iconContainer{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 200px;
+    height: 50px;
+    /* margin right pour centrer mon container au milieu */
+    margin-right: 9rem;
+    /* margin top pour decoller le container  en haut de la div parent */
+    margin-top: 0.5rem;
+    color: #f7971e;
+    font-size: 35px;
+}
+
+#copyright{
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    /* margin top abaisse mon container  en bas */
+    margin-top: 35px;
+    /* padding right décole mon copyright de la bordure droite */
+    padding-right: 15px;
+    width: 200px;
+    height: 30px;
+    font-size: 10px;
+}
+
+
+  p {
+  font-family: "Playwrite DE Grund", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+  font-size: 14px;
+}
+
+
+
+

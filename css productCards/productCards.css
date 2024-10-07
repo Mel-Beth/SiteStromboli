@@ -1,11 +1,48 @@
 main{
-    background-color: gold;
-}
-
-
-img{
-    width: 100px;
+    
+    width: 0;
     height: auto;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    margin-top: 2rem;
+
+
 }
 
+.imgMenu{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-left: 100px;
+   
+}
+
+#imgCardBoisson{
+    width: 300px;
+    height: auto;
+    margin-right: 60px;
+    border: 2px rgb(255, 255, 254) solid;
+    box-shadow: 0 0 20px rgb(184, 127, 14) ;
+}
+
+.imgCardPizza{
+    width: 300px;
+    height: auto;
+    margin-right: 60px;
+    border: 2px rgb(255, 255, 254) solid;
+    box-shadow: 0 0 20px rgb(184, 127, 14) ;
  
+}
+
+.imgCardDessert{
+    width: 300px;
+    height: auto;
+    margin-right: 30px;
+    border: 2px rgb(255, 255, 254) solid;
+    box-shadow: 0 0 20px rgb(184, 127, 14) ;
+}

@@ -1,13 +1,86 @@
 .cadrePresentation{
     display: flex;
     flex-direction: column;
-    background-color: rgb(198, 173, 32);
-    height:30rem;
+    background-color:#F7971E ;
+    height:20rem;
     width: 20rem;
-    margin: 40 px auto;
-    padding: 20px;
-    border: 2px solid white;
+    border: 2px solid rgb(249, 241, 135);
     border-radius: 1rem;
-    box-shadow: 0 0 10px rgb(112, 102, 44);
+    box-shadow: 0 0 15px #e17f08;
+    margin-top: 2rem;
+    
+    
+}
+
+
+
+.titrePresentation{
+    font-family: 'Dancing_Script variant0', Tofu;
+    justify-items: center;
+    align-content: stretch;
+}
+
+
+
+#paraStromboli{
+    justify-items: center;
+    align-content: stretch;
+    margin-left: 10px;
+    margin-right: 10px;
+    align-items: center;
+   text-align: justify;
+   color: white;
+
+}
+
+#btnHoraires{
+    display: flex;
     justify-content: center;
+    margin: 50px;
+}
+
+
+
+         
+#btnHoraires {
+    background-image: linear-gradient(to right, #06beb6 0%, #48b1bf  51%, #06beb6  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    /* retrait de l'effet glow du btn horaires:  */
+    border-radius: 10px;
+    display: block;
+   
+  }
+
+  #btnHoraires:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #258ed8;
+    text-decoration: none;
+  }
+ 
+  #btn{
+    margin-left: 20%;
+
+  }
+
+
+  h1 {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: bold;
+    font-size: 28px;
+  }
+
+  p {
+  font-family: "Playwrite DE Grund", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
 }
