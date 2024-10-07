@@ -1,9 +1,15 @@
-h1 {
+#titreSuggestion {
+    display: flex;
+    flex-direction: row;
     font-family: "Dancing Script", cursive;
     font-optical-sizing: auto;
-    font-weight: 600px;
+    font-weight: 600;
     font-style: bold;
     font-size: 30px;
+    width: 500px;
+    height: auto;
+    color: white;
+   margin-left: 4rem;
 }
 
 p {
@@ -12,5 +18,38 @@ p {
     font-weight: 400px;
     font-style: normal;
     font-size: 15px;
+    margin-left: 4rem;
+   
+  
 }
 
+#imgSuggestion {
+    width: 500px !important;
+    height: auto !important;
+    border: 3px solid white;
+    margin-bottom: 4.1rem;
+
+   
+    
+
+}
+
+.imgSuggestion{
+    width: 500px ;
+    height: auto ;
+    margin-top: 3rem;
+    
+}
+   
+
+.texteSuggestion{
+    display: flex;
+    flex-direction: column;
+    padding-right: 20rem;
+    width: 500px;
+    height: 300px;
+    margin-bottom: 2rem;
+    text-align: justify;
+    
+    
+}

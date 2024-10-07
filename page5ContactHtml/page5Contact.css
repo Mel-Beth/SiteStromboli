@@ -9,10 +9,11 @@ body{
     margin-top: 50px;
     width: 50%;
     height: 30rem;
-    margin-left: 50px;
+    margin-left: 3rem;
     border: 3px solid white;
     margin-bottom: 6vh;
     flex-wrap: column;
+
    
     
 
@@ -25,7 +26,7 @@ body{
     font-weight: 600;
     text-decoration: underline white;
     color: white;
-    padding-left: 12rem;
+    padding-left: 5rem;
     /* le nowrap mets ma phrase sur une ligne et pas plusieurs */
     white-space: nowrap;
     height: 2.5rem;
@@ -159,11 +160,9 @@ p {
 
 .photoContact {
     display: block;
-     margin-right: 10rem;
+     margin-right: 5rem;
     justify-items: center;
-  
-
-
+    margin-left: 10rem;
 
 }
 
@@ -172,7 +171,8 @@ p {
     align-items: flex-start;
     width: 300px;
     height: auto;
-   margin-top: 2rem;
+    margin-top: 2rem;
+    border: white 3px solid;
    
 
    
