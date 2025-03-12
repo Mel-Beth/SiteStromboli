@@ -4,10 +4,10 @@
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="/css productCards/productCards.css">
-    <link rel="stylesheet" href="/cadrepresentation/cadreGauche.css">
-    <link rel="stylesheet" href="/footerCss/footerStyle.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/productCards.css">
+    <link rel="stylesheet" href="../css/cadreGauche.css">
+    <link rel="stylesheet" href="../css/footerStyle.css">
    <script src="https://kit.fontawesome.com/677558f9a4.js" crossorigin="anonymous"></script>
     <title>Accueil</title>
     <!-- font google pour titre h1 stromboli -->
@@ -18,22 +18,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="../css/menu.css">
     <title>Menu</title>
 </head>
 
 <body>
-    <header>
+<header>
+        <div id="containerLogoStromboli">
+            <img src="../image/logoStromboli.jpeg" alt="logoStromboli" id="logoStromboli">
+        </div>
         <!-- BARRE DE MENU AVEC LES ONGLETS -->
-
-        <img src="admin/img/logo.png" alt="logoStromboli" id="logoStromboli" width=100px>
         <nav class="barreNav">
-            <li><a href="/Presentation/index.html#ancreAccueil">Accueil</a></li>
-            <li><a href="/page2Menu/menu.php">Menu</a></li>
-            <li><a href="/page3SuggestionChef/page3Suggestion.html#ancreSuggestion">Suggestion du Chef</a></li>
-            <li><a href="/page4Horaires/page4Horaires.html#ancreHoraires">Horaires</a></li>
-            <li><a href="/pageContactHtml/page5Contact.html#pageContact">Nous contacter</a></li>
-            <li><a href="/page6LivreDor/livreDOr.html#ancreLivreDOr">Livre d'or</a></li>
+            <li><a href="index.html#ancreAccueil">Accueil</a></li>
+            <li><a href="menu.php">Menu</a></li>
+            <li><a href="page3Suggestion.html#ancreSuggestion">Suggestion du Chef</a></li>
+            <li><a href="page4Horaires.html#ancreHoraires">Horaires</a></li>
+            <li><a href="page5Contact.html#ancreContact">Nous contacter</a></li>
+            <li><a href="livreDOr.html#ancreLivreDOr">Livre d'or</a></li>
         </nav>
     </header>
 

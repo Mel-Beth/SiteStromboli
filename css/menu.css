@@ -31,11 +31,13 @@ nav ul::after{
 }
 
 nav li{
-    list-style-type: none
-    ;
+    list-style-type: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
     float: left;
     width: 10rem;
     text-align: center;
+    margin-right: 2rem;
 }
 
 nav a{
